@@ -4,12 +4,9 @@ require('dotenv').config();
 const app=express();
 const port=process.env.PORT || 4000 ;
 
-const corsOptions={
-    origin: process.env.MONGODB_URL,
-    methods:'GET,POST,PUT,DELETE,PATCH'
-};
 
-app.use(cors(corsOptions));
+
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
