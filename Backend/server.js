@@ -2,14 +2,14 @@ const express=require('express');
 const cors=require('cors');
 require('dotenv').config();
 const app=express();
-const port=process.env.PORT || 4000 ;
+const port=process.env.PORT || 3000 ;
 
-const corsOptions={
-    origin: "https://event-booking-system-tau.vercel.app",
-    methods:'GET,POST,PUT,DELETE,PATCH'
-};
+// const corsOptions={
+//     origin: "https://event-booking-system-tau.vercel.app/",
+//     methods:['GET,POST,PUT,DELETE,PATCH']
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
