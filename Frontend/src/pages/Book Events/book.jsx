@@ -14,12 +14,12 @@ const Booking=()=>{
     const [booking,setBooking]=useState({firstname:'',lastname:'',email:'',Address:'',state:'',city:'',zipcode:'',phonenumber:''})
     
 
-    // const pricePerTicket=400;    //example ticket price
+    
 
     const onChange=(e, key)=>{
         setBooking({...booking,[key]: e.target.value});
     }
-    // console.log(booking);
+    
     let orderData={
         address:booking,
         items:event,
