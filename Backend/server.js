@@ -1,10 +1,15 @@
 const express=require('express');
 const cors=require('cors');
-const env=require( 'dotenv/config');
+require('dotenv').config();
 const app=express();
-const PORT=process.env.PORT || 4000 ;
+const port=process.env.PORT || 4000 ;
 
-app.use(cors());
+const corsOptions={
+    origin: process.env.MONGODB_URL,
+    methods:'GET,POST,PUT,DELETE,PATCH'
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static('public'));
 
@@ -20,6 +25,6 @@ app.use('*',(req,res)=>{
 })
 
 
-app.listen(PORT,()=>{
-    console.log(`app is running @ http://localhost:${PORT}/`);
+app.listen(port,()=>{
+    console.log(`app is running @ http://localhost:${port}/`);
 })
