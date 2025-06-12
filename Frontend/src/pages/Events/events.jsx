@@ -1,7 +1,7 @@
 import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../Utils/axios';
-import {BASE_URL} from '../../Utils/axios';
+import BASE_URL from '../../Utils/axios';
 import './events.css';
 import Footer from '../../Components/Footer/footer';
 
