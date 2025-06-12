@@ -1,0 +1,1 @@
+export const baseURL = 'https://event-booking-system-rfca.onrender.com/api';

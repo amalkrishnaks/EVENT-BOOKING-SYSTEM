@@ -1,7 +1,7 @@
 import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../Utils/axios';
-import BASE_URL from '../../Utils/axios';
+import { baseURL } from '../../config';
 import './events.css';
 import Footer from '../../Components/Footer/footer';
 
@@ -14,7 +14,7 @@ const Events=()=>{
 
     useEffect(()=>{
         try{
-             axios.get(`${BASE_URL}/user/userevent`).then((res) => {
+             axios.get(`${baseURL}/user/userevent`).then((res) => {
             setEvent(res.data.data);
             console.log(events);
             

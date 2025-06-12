@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../Utils/axios';
 import { ToastContainer,toast } from 'react-toastify';
-import BASE_URL from '../../Utils/axios';
+import { baseURL } from '../../config';
 import './login.css';
 import Events from '../../pages/Events/events';
 
@@ -23,13 +23,13 @@ const Login=({setShowLogin})=>{
     const onClick=async()=>{
         try {
             if(currState==='Login'){
-                const response=await axios.post(`${BASE_URL}/api/user/login`,login)
+                const response=await axios.post(`${baseURL}/user/login`,login)
                 localStorage.setItem('token',response.data.token);
                 setShowLogin(false)
                 navigate('/');
                 console.log(response);
             }else{
-                const response=await axios.post(`${BASE_URL}/api/user/signup`,login)
+                const response=await axios.post(`${baseURL}/user/signup`,login)
                 console.log(response.data);
                 toast.success("Registeration successful!");
             }
